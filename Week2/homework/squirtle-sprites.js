@@ -9,3 +9,4 @@ function fetchPokemonData() {
 }
 
 /* Code goes below */
+fetchPokemonData();
