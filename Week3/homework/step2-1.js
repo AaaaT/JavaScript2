@@ -14,3 +14,4 @@ foo(bar);
 
 // Do not change or remove anything below this line
 module.exports = foo;
+
