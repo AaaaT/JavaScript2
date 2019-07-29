@@ -1,13 +1,17 @@
 /*following the https://www.youtube.com/watch?v=rRgD1yVwIvE tutorial */
 
 const shoppingCardItems = [
-    {name:"yogurt", category: "Diary", start: 07, end: 09},
-    {name:"white bun", category: "Bread", start: 09, end: 10},
-    {name:"beef", category: "Meat", start: 05, end: 09},
-    {name:"pizza", category: "Ready to Eat", start: 02, end: 08},
-    {name:"bell pepper", category: "Vegetables", start: 01, end: 16},
-    {name:"apple", category: "Fruit", start: 02, end: 14},
-    {name:"beer", category: "Alcohol", start: 01, end: 31},
+    {name:"yogurt", department: "Diary", producedON: 07, bestBefore: 09},
+    {name:"white bun", department: "Bread", producedON: 09, bestBefore: 10},
+    {name:"potato", department: "Vegetables", producedON: 01, bestBefore: 31},
+    {name:"beef", department: "Meat", producedON: 05, bestBefore: 09},
+    {name:"pizza", department: "Ready to Eat", producedON: 02, bestBefore: 08},
+    {name:"wine", department: "Alcohol", producedON: 05, bestBefore: 30},
+    {name:"onion", department: "Vegetables", producedON: 03, bestBefore: 31},
+    {name:"schnapps", department: "Alcohol", producedON: 05, bestBefore: 28},
+    {name:"apple",department: "Fruit", producedON: 02, bestBefore: 12},
+    {name:"beer", department: "Alcohol", producedON: 01, bestBefore: 31},
+    {name:"bell pepper", department: "Vegetables", producedON: 01, bestBefore: 16},
 ];
 const ages = [34, 55, 6,  67, 28, 12, 15, 18, 30, 17, 17, 36, 51];
 
@@ -17,10 +21,10 @@ const ages = [34, 55, 6,  67, 28, 12, 15, 18, 30, 17, 17, 36, 51];
 // }
 
     //forEach
-shoppingCardItems.forEach(function(shoppingCardItems){
-    console.log(shoppingCardItems);
-    console.log(shoppingCardItems.name);
-});
+// shoppingCardItems.forEach(function(shoppingCardItems){
+//     console.log(shoppingCardItems);
+//     console.log(shoppingCardItems.name);
+// });
 
 
     //filter
@@ -33,17 +37,45 @@ shoppingCardItems.forEach(function(shoppingCardItems){
 // }
         //or 
 // const canDrink = ages.filter(function(age){
-//     if(age >=21){
+//     if(age >=21 ){
 //         return true;
 //     }
 // })
         //or 
-const canDrink = ages.filter(age => age >= 21);
+// const canDrink = ages.filter(age => age >= 21);
 
-console.log(canDrink);
+// console.log(canDrink);
+
+    //filter best before for products
+
+// const shopDepartments = shoppingCardItems.filter(function(shoppingCardItems){
+// if(shoppingCardItems.department === "Vegetables"){
+//     return true;
+// }
+// });
+
+const shopDepartments = shoppingCardItems.filter(shoppingCardItems => shoppingCardItems.department === "Alcohol");
+
+console.log(shopDepartments);
+
+// Get products that were produced on 05th
+
+const producedFifth = shoppingCardItems.filter(shoppingCardItems => (shoppingCardItems.producedON == 05));
+console.log(producedFifth)
+
+const isBestTenDays = shoppingCardItems.filter(shoppingCardItems => (shoppingCardItems.bestBefore - shoppingCardItems.producedON >= 10));
+console.log(isBestTenDays)
 
 
+    //map
+//Create array of Shopping Card Item Names
 
-//map
+const shoppingCardItemNames = shoppingCardItems.map(function(shoppingCardItems){
+    return shoppingCardItems.name;
+    //return 4; test
+});
+
+console.log(shoppingCardItemNames)
+
 //sort
 //reduce
