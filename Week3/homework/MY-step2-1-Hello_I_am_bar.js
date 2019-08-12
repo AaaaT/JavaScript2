@@ -10,7 +10,7 @@ function foo(func) {
   // What to do here?
   // Replace this comment and the next line with your code
   return ('Hi, I am AaaaT, who are you?');
-  console.log(func);
+  //console.log(func);
 }
 
 function bar() {
