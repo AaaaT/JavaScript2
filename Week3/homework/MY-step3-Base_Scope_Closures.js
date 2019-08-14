@@ -2,8 +2,14 @@
 
 function createBase(base) {
   // Replace this comment and the next line with your code
+
+ return function(number) {
+  return base + number
+  
   console.log(base);
 }
+}
+
 
 const addSix = createBase(6);
 
